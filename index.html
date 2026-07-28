@@ -1,21 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>SA Marketplace</title>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-</head>
 <body>
   <h1>SA Marketplace</h1>
+
+  <h2>Sign Up</h2>
+  <input type="email" id="signup-email" placeholder="Email"><br>
+  <input type="password" id="signup-password" placeholder="Password"><br>
+  <button onclick="signUp()">Sign Up</button>
+  <p id="signup-message"></p>
 
   <script>
     const SUPABASE_URL = "YOUR_PROJECT_URL_HERE";
     const SUPABASE_KEY = "YOUR_PUBLISHABLE_KEY_HERE";
-
     const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-    console.log("Supabase connected:", supabase);
-  </script>
-  </body>
-</html>
+    async function signUp() {
+      const email = document.getElementById('signup-email').value;
+      const password = document.getElementById('signup-password').value;
 
+      const { data, error } = await supabase.auth.signUp({ email, password });
+
+      const message = document.getElementById('signup-message');
+      if (error) {
+        message.textContent = "Error: " + error.message;
+      } else {
+        message.textContent = "Success! Check your email to confirm.";
+      }
+    }
+  </script>
+</body>
