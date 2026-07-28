@@ -8,6 +8,15 @@
   <script>
     document.body.innerHTML += "<h1 style='color:red'>JS IS WORKING</h1>";
     document.body.innerHTML += "<h1 style='color:blue'>supabase type: " + typeof window.supabase + "</h1>";
+
+    try {
+      const SUPABASE_URL = "https://pylpenrusdgmacpspwex.supabase.co";
+      const SUPABASE_KEY = "sb_publishable__7bsVUvDETBBI7EdcD0Gew_sU4r-pah";
+      const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+      document.body.innerHTML += "<h1 style='color:green'>Client created OK</h1>";
+    } catch (e) {
+      document.body.innerHTML += "<h1 style='color:orange'>ERROR: " + e.message + "</h1>";
+    }
   </script>
 </body>
 </html>
