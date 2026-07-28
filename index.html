@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SA Marketplace</title>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
-          onerror="alert('CDN SCRIPT FAILED TO LOAD')"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
   <h1>SA Marketplace</h1>
@@ -15,22 +15,15 @@
   <button onclick="signUp()">Sign Up</button>
   <p id="signup-message"></p>
 
-    <script>
-  document.body.innerHTML += "<p style='color:red'>Script is running!</p>";
-  document.body.innerHTML += "<p style='color:red'>window.supabase is: " + typeof window.supabase + "</p>";
-</script>
-
-    alert("Page script starting...");
-    alert("window.supabase is: " + typeof window.supabase);
+  <script>
+    document.body.innerHTML += "<p style='color:red'>Script is running!</p>";
+    document.body.innerHTML += "<p style='color:red'>window.supabase is: " + typeof window.supabase + "</p>";
 
     const SUPABASE_URL = "https://pylpenrusdgmacpspwex.supabase.co";
     const SUPABASE_KEY = "sb_publishable__7bsVUvDETBBI7EdcD0Gew_sU4r-pah";
     const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-    alert("Supabase client created!");
-
     async function signUp() {
-      alert("Button clicked!");
       const email = document.getElementById('signup-email').value;
       const password = document.getElementById('signup-password').value;
       const { data, error } = await supabase.auth.signUp({ email, password });
