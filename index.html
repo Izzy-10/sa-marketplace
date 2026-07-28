@@ -15,10 +15,15 @@
   <p id="signup-message"></p>
 
   <script>
+    if (typeof window.supabase === 'undefined') {
+      alert("Supabase library did NOT load!");
+    } else {
+      alert("Supabase library loaded fine!");
+    }
+
     const SUPABASE_URL = "https://pylpenrusdgmacpspwex.supabase.co";
     const SUPABASE_KEY = "sb_publishable__7bsVUvDETBBI7EdcD0Gew_sU4r-pah";
     const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-
     async function signUp() {
   alert("Button clicked!");
       const email = document.getElementById('signup-email').value;
