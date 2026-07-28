@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
 <body>
   <h1>Original text</h1>
   <script>
     document.body.innerHTML += "<h1 style='color:red'>JS IS WORKING</h1>";
+    document.body.innerHTML += "<h1 style='color:blue'>supabase type: " + typeof window.supabase + "</h1>";
   </script>
 </body>
 </html>
