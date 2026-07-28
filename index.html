@@ -15,10 +15,10 @@
   <button onclick="signUp()">Sign Up</button>
   <p id="signup-message"></p>
 
-  <script>
-    window.onerror = function(msg, url, line) {
-      alert("JS ERROR: " + msg + " (line " + line + ")");
-    };
+    <script>
+  document.body.innerHTML += "<p style='color:red'>Script is running!</p>";
+  document.body.innerHTML += "<p style='color:red'>window.supabase is: " + typeof window.supabase + "</p>";
+</script>
 
     alert("Page script starting...");
     alert("window.supabase is: " + typeof window.supabase);
