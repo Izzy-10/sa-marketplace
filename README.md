@@ -1,37 +1,32 @@
-# The Local Market MVP
+# The Local Market — Supabase MVP
 
-A starter marketplace for entrepreneurs, creators, and independent businesses.
+A static marketplace for entrepreneurs and independent businesses, backed by Supabase Auth, Postgres, Row Level Security, and Storage.
 
-## What is included
+## Features
 
-- landing page with hero and marketplace browsing experience
-- search and category filtering
-- product cards linked to detail pages
-- seller dashboard with a simple listing form
-- local demo data for a realistic MVP flow
-- optional Supabase integration for auth and listings
+- Browse live listings, search, and filter by category
+- Email/password sign-up and login with Supabase Auth
+- Seller business profile editing
+- Create, archive/publish, and delete your own listings
+- Optional listing image uploads to a public Supabase Storage bucket
+- Customer-to-seller inquiries stored privately in Supabase
+- RLS policies for profiles, listings, inquiries, and listing images
+- Demo listing data remains available before Supabase is configured
 
-## Start locally
+## Setup
 
-1. Open `index.html` in a browser, or serve the folder with a local static server.
-2. The marketplace will work as a demo immediately with sample listings.
-3. To connect Supabase, update `SUPABASE_URL` and `SUPABASE_ANON_KEY` in `app.js` and run the SQL from `supabase/schema.sql` in the Supabase SQL editor.
+1. Create a Supabase project.
+2. Open the SQL Editor and run [`supabase/schema.sql`](supabase/schema.sql). If upgrading the previous starter, take a database backup first; this script preserves existing listings and removes the old profile email column because contact emails should not be public.
+3. In `app.js`, set `SUPABASE_URL` and `SUPABASE_ANON_KEY` using your project URL and browser-safe **publishable/anon key**.
+4. In Supabase Authentication settings, enable email/password and configure Site URL plus Redirect URLs for local development and the GitHub Pages site.
+5. Serve or deploy the repository as a static site. Start at `index.html`; sellers use `dashboard.html`.
 
-## Pages
+Never place a Supabase `service_role` or secret key in this public repository. The publishable/anon key is intended for browser use only because database access is guarded by RLS. Review policies and validate the deployment settings before launch.
 
-- `index.html` — marketplace home page
-- `details.html` — product detail page
-- `dashboard.html` — seller dashboard and listing management
+## Notes and limits
 
-## Demo data
-
-The app stores demo listings in browser local storage so you can add, filter, and browse them without a database.
-
-## Next steps for the real MVP
-
-- connect real auth and listings to Supabase
-- add product images and uploads
-- add cart or inquiry flows
-- add profile creation and business details
-- add bookings or checkout
-- add review and moderation flows
+- The marketplace uses USD for display; change the currency helper in `app.js` for your market.
+- Inquiries are stored in the database; this starter does not send email notifications or expose buyer email addresses to sellers.
+- There is no checkout or payment processing. Add a trusted payment provider and server-side/Edge Function flow before taking payments; do not treat a client-side action as proof of payment.
+- Public listing images are readable by anyone. Upload limits and allowed image MIME types are enforced by the bucket; the app limits images to 5 MB.
+- The seller dashboard is a simple MVP, not a complete commerce/admin system. Add moderation, abuse controls, backups, and monitoring before production.

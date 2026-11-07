@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f6f2">
   <meta name="description" content="Discover independent businesses, products and services on The Local Market.">
@@ -14,71 +14,16 @@
   <script src="app.js" defer></script>
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="index.html" aria-label="The Local Market home"><span class="brand-mark">L</span><span>the local market<span class="brand-dot">.</span></span></a>
-    <nav class="desktop-nav" aria-label="Main navigation">
-      <a class="nav-link active" href="#discover">Discover</a>
-      <a class="nav-link" href="#categories">Categories</a>
-      <a class="nav-link" href="#about">Our community</a>
-    </nav>
-    <div class="nav-actions">
-      <button class="text-button" id="auth-button" type="button">Log in</button>
-      <button class="button button-dark button-small" id="sell-button" type="button">Start selling <span aria-hidden="true">↗</span></button>
-      <button class="avatar-button hidden" id="account-button" type="button" aria-label="Account menu">Y</button>
-    </div>
-  </header>
-
+  <header class="topbar"><a class="brand" href="index.html"><span class="brand-mark">L</span><span>the local market<span class="brand-dot">.</span></span></a><nav class="desktop-nav" aria-label="Main navigation"><a class="nav-link active" href="#discover">Discover</a><a class="nav-link" href="#categories">Categories</a><a class="nav-link" href="#about">Our community</a></nav><div class="nav-actions"><button class="text-button" id="auth-button" type="button">Log in</button><button class="button button-dark button-small" id="sell-button" type="button">Start selling ↗</button><button class="avatar-button hidden" id="account-button" type="button" aria-label="Log out">Y</button></div></header>
   <main id="home">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="eyebrow-dot"></span> MADE WITH INDEPENDENCE</p>
-        <h1 id="hero-title">Good things happen<br>when we <em>shop small.</em></h1>
-        <p class="hero-description">A home for the makers, doers and dreamers building something of their own. Find your next favorite from independent businesses.</p>
-        <a class="button button-dark" href="#discover">Explore the market <span aria-hidden="true">↓</span></a>
-        <div class="community-note"><div class="mini-avatars"><span>J</span><span>M</span><span>A</span><span>+</span></div><span>Made by people, for people.</span></div>
-      </div>
-      <div class="hero-art" aria-label="Illustration of a small business storefront">
-        <div class="sun-shape"></div><div class="hero-leaf leaf-one">✳</div><div class="hero-leaf leaf-two">✳</div>
-        <div class="shop-card"><div class="shop-awning"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="shop-window"><span class="window-flower">✿</span><span class="window-stem"></span><span class="window-pot"></span></div><div class="shop-door"><span></span></div><div class="shop-sign">small wonder</div></div>
-        <div class="art-tag tag-left"><span>✿</span> A little more local</div><div class="art-tag tag-right">Good stuff, good people <span>♥</span></div>
-      </div>
-    </section>
-
-    <section class="market-section" id="discover" aria-labelledby="discover-title">
-      <div class="section-heading">
-        <div><p class="eyebrow">A MARKET WITH MEANING</p><h2 id="discover-title">Find your next <em>favorite.</em></h2></div>
-        <p class="section-aside">Every purchase helps an independent business<br>grow a little further.</p>
-      </div>
-      <div class="market-controls">
-        <label class="search-box"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Search products, services, businesses..." aria-label="Search the marketplace"><kbd>⌘ K</kbd></label>
-        <button class="filter-button" id="sort-button" type="button">Featured <span aria-hidden="true">⌄</span></button>
-      </div>
-      <div class="category-row" id="categories" aria-label="Filter by category">
-        <button class="category-chip selected" data-category="All" type="button">All finds <span>✳</span></button>
-        <button class="category-chip" data-category="Home & Living" type="button">Home & Living</button>
-        <button class="category-chip" data-category="Food & Drink" type="button">Food & Drink</button>
-        <button class="category-chip" data-category="Wellness" type="button">Wellness</button>
-        <button class="category-chip" data-category="Art & Design" type="button">Art & Design</button>
-        <button class="category-chip" data-category="Services" type="button">Services</button>
-      </div>
-      <div class="results-meta"><span id="results-count">A few lovely finds</span><button class="clear-filter hidden" id="clear-search" type="button">Clear search ×</button></div>
-      <div class="listing-grid" id="listing-grid" aria-live="polite"></div>
-      <div class="empty-state hidden" id="empty-state"><span>✳</span><h3>No finds just yet</h3><p>Try a different search or category. Your next favorite is out there.</p><button class="button button-outline" id="reset-filters" type="button">Show everything</button></div>
-    </section>
-
-    <section class="seller-banner" id="about">
-      <div class="seller-illustration"><div class="banner-sun"></div><div class="banner-pot">✿</div><span class="banner-sparkle">✳</span></div>
-      <div class="seller-copy"><p class="eyebrow">YOUR BUSINESS BELONGS HERE</p><h2>You make the good stuff.<br>We'll help people <em>find it.</em></h2><p>Bring your brilliant little business to a community that cares about where its money goes.</p><button class="button button-cream" id="banner-sell-button" type="button">Make a shop of your own <span aria-hidden="true">↗</span></button></div>
-      <div class="banner-note"><span>✳</span><p>Built for the<br>independent spirit.</p></div>
-    </section>
-    <section class="values-row" aria-label="Marketplace values"><div><span>01</span><p><strong>People first</strong><br>Real businesses, real stories.</p></div><div><span>02</span><p><strong>Thoughtfully found</strong><br>Good things, made with care.</p></div><div><span>03</span><p><strong>Small makes a difference</strong><br>Your support goes a long way.</p></div></section>
+    <section class="hero"><div class="hero-copy"><p class="eyebrow"><span class="eyebrow-dot"></span> MADE WITH INDEPENDENCE</p><h1>Good things happen<br>when we <em>shop small.</em></h1><p class="hero-description">A home for the makers, doers and dreamers building something of their own. Find your next favorite from independent businesses.</p><a class="button button-dark" href="#discover">Explore the market ↓</a><div class="community-note"><div class="mini-avatars"><span>J</span><span>M</span><span>A</span><span>+</span></div><span>Made by people, for people.</span></div></div><div class="hero-art" aria-label="Illustration of an independent storefront"><div class="sun-shape"></div><div class="hero-leaf leaf-one">✳</div><div class="hero-leaf leaf-two">✳</div><div class="shop-card"><div class="shop-awning"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="shop-window"><span class="window-flower">✿</span><span class="window-stem"></span><span class="window-pot"></span></div><div class="shop-door"><span></span></div><div class="shop-sign">small wonder</div></div><div class="art-tag tag-left">✿ A little more local</div><div class="art-tag tag-right">Good stuff, good people ♥</div></div></section>
+    <section class="market-section" id="discover"><div class="section-heading"><div><p class="eyebrow">A MARKET WITH MEANING</p><h2>Find your next <em>favorite.</em></h2></div><p class="section-aside">Every purchase helps an independent business<br>grow a little further.</p></div><div class="market-controls"><label class="search-box"><span>⌕</span><input id="search-input" type="search" placeholder="Search products, services, businesses..." aria-label="Search the marketplace"><kbd>⌘ K</kbd></label><span class="filter-button static-filter">Latest finds</span></div><div class="category-row" id="categories" aria-label="Filter by category"><button class="category-chip selected" data-category="All" type="button">All finds ✳</button><button class="category-chip" data-category="Home & Living" type="button">Home & Living</button><button class="category-chip" data-category="Food & Drink" type="button">Food & Drink</button><button class="category-chip" data-category="Wellness" type="button">Wellness</button><button class="category-chip" data-category="Art & Design" type="button">Art & Design</button><button class="category-chip" data-category="Services" type="button">Services</button></div><div class="results-meta"><span id="results-count">Loading finds…</span><button class="clear-filter hidden" id="clear-search" type="button">Clear filters ×</button></div><div class="listing-grid" id="listing-grid" aria-live="polite"></div><div class="empty-state hidden" id="empty-state"><span>✳</span><h3>No finds just yet</h3><p>Try a different search or category.</p><button class="button button-outline" id="reset-filters" type="button">Show everything</button></div></section>
+    <section class="seller-banner" id="about"><div class="seller-illustration"><div class="banner-sun"></div><div class="banner-pot">✿</div><span class="banner-sparkle">✳</span></div><div class="seller-copy"><p class="eyebrow">YOUR BUSINESS BELONGS HERE</p><h2>You make the good stuff.<br>We'll help people <em>find it.</em></h2><p>Bring your brilliant little business to a community that cares about where its money goes.</p><button class="button button-cream" id="banner-sell-button" type="button">Make a shop of your own ↗</button></div><div class="banner-note"><span>✳</span><p>Built for the<br>independent spirit.</p></div></section>
   </main>
-
   <footer class="footer"><a class="brand" href="index.html"><span class="brand-mark">L</span><span>the local market<span class="brand-dot">.</span></span></a><p>A little market for a big-hearted community.</p><span>© <span id="year"></span> The Local Market</span></footer>
-
   <dialog class="modal" id="auth-modal" aria-labelledby="auth-title"><form method="dialog" class="modal-close-form"><button class="modal-close" aria-label="Close">×</button></form><div class="modal-content"><p class="eyebrow">GOOD TO HAVE YOU</p><h2 id="auth-title">Welcome <em>in.</em></h2><p class="modal-intro">Sign in or create an account to join the community.</p><div class="auth-tabs"><button class="auth-tab selected" data-mode="signin" type="button">Log in</button><button class="auth-tab" data-mode="signup" type="button">Create account</button></div><form id="auth-form"><label for="auth-email">Email address</label><input id="auth-email" type="email" autocomplete="email" required placeholder="you@example.com"><label for="auth-password">Password</label><input id="auth-password" type="password" autocomplete="current-password" minlength="6" required placeholder="At least 6 characters"><button class="button button-dark full-width" type="submit" id="auth-submit">Log in</button></form><p class="form-message" id="auth-message" role="status"></p></div></dialog>
-
-  <dialog class="modal" id="listing-modal" aria-labelledby="listing-title"><form method="dialog" class="modal-close-form"><button class="modal-close" aria-label="Close">×</button></form><div class="modal-content"><p class="eyebrow">PUT YOUR WORK OUT THERE</p><h2 id="listing-title">Add a <em>listing.</em></h2><p class="modal-intro">Share a product or service with the community.</p><form id="listing-form"><label for="listing-name">Listing title</label><input id="listing-name" maxlength="90" required placeholder="e.g. Hand-thrown ceramic mug"><label for="listing-category">Category</label><select id="listing-category" required><option value="">Choose a category</option><option>Home & Living</option><option>Food & Drink</option><option>Wellness</option><option>Art & Design</option><option>Services</option></select><label for="listing-description">A little about it</label><textarea id="listing-description" rows="3" maxlength="400" required placeholder="What makes it special?"></textarea><div class="form-columns"><div><label for="listing-price">Price (USD)</label><input id="listing-price" type="number" min="0" step="0.01" required placeholder="25.00"></div><div><label for="listing-business">Business name</label><input id="listing-business" maxlength="80" required placeholder="Your business"></div></div><button class="button button-dark full-width" type="submit">Publish listing</button></form><p class="form-message" id="listing-message" role="status"></p></div></dialog>
+  <dialog class="modal" id="listing-modal" aria-labelledby="listing-title"><form method="dialog" class="modal-close-form"><button class="modal-close" aria-label="Close">×</button></form><div class="modal-content"><p class="eyebrow">PUT YOUR WORK OUT THERE</p><h2 id="listing-title">Add a <em>listing.</em></h2><p class="modal-intro">Share a product or service with the community.</p><form id="listing-form"><label for="listing-name">Listing title</label><input id="listing-name" maxlength="90" required><label for="listing-category">Category</label><select id="listing-category" required><option value="">Choose a category</option><option>Home & Living</option><option>Food & Drink</option><option>Wellness</option><option>Art & Design</option><option>Services</option></select><label for="listing-description">Description</label><textarea id="listing-description" rows="3" maxlength="400" required></textarea><div class="form-columns"><div><label for="listing-price">Price (USD)</label><input id="listing-price" type="number" min="0" step="0.01" required></div><div><label for="listing-business">Business name</label><input id="listing-business" maxlength="80" required></div></div><label for="listing-location">Location (optional)</label><input id="listing-location" maxlength="100"><label for="listing-image">Listing photo (optional, max 5 MB)</label><input id="listing-image" type="file" accept="image/*"><button class="button button-dark full-width" type="submit">Publish listing</button></form><p class="form-message" id="listing-message" role="status"></p></div></dialog>
+  <dialog class="modal" id="inquiry-modal" aria-labelledby="inquiry-title"><form method="dialog" class="modal-close-form"><button class="modal-close" aria-label="Close">×</button></form><div class="modal-content"><p class="eyebrow">SAY HELLO</p><h2 id="inquiry-title">Contact the seller</h2><p class="modal-intro">Your email stays private. The seller can reply through the contact details they choose to share.</p><form id="inquiry-form"><input id="inquiry-listing-id" type="hidden"><input id="inquiry-seller-id" type="hidden"><label for="inquiry-text">Your message</label><textarea id="inquiry-text" rows="4" maxlength="1000" required placeholder="Ask a question about this listing..."></textarea><button class="button button-dark full-width" type="submit">Send inquiry</button></form><p class="form-message" id="inquiry-message" role="status"></p></div></dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
