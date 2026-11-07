@@ -1,28 +1,37 @@
-# The Local Market
+# The Local Market MVP
 
-A responsive, static marketplace starter for independent businesses. It includes a discover page with searchable, filterable sample listings, a responsive layout, and optional Supabase authentication and listing creation.
+A starter marketplace for entrepreneurs, creators, and independent businesses.
 
-## Run locally
+## What is included
 
-Open `index.html` in a browser, or serve this folder with a static web server. The page works as a UI demo without backend credentials and displays sample listings. Authentication and publishing require a Supabase project.
+- landing page with hero and marketplace browsing experience
+- search and category filtering
+- product cards linked to detail pages
+- seller dashboard with a simple listing form
+- local demo data for a realistic MVP flow
+- optional Supabase integration for auth and listings
 
-## Connect Supabase
+## Start locally
 
-1. Create a Supabase project.
-2. In the Supabase SQL Editor, run [`supabase/schema.sql`](supabase/schema.sql).
-3. In `app.js`, set `SUPABASE_URL` and `SUPABASE_ANON_KEY` to your project's URL and **publishable (anon) key**.
-4. In Supabase Auth settings, configure the site URL and redirect URLs for your local development URL and deployed GitHub Pages URL.
-5. Deploy the repository's root to GitHub Pages.
+1. Open `index.html` in a browser, or serve the folder with a local static server.
+2. The marketplace will work as a demo immediately with sample listings.
+3. To connect Supabase, update `SUPABASE_URL` and `SUPABASE_ANON_KEY` in `app.js` and run the SQL from `supabase/schema.sql` in the Supabase SQL editor.
 
-Only use a publishable/anon key in browser code. Never put a `service_role` or other secret key in this public repository. The database schema enables row-level security; review and adapt policies before launching with real users or sensitive information.
+## Pages
 
-## Included
+- `index.html` — marketplace home page
+- `details.html` — product detail page
+- `dashboard.html` — seller dashboard and listing management
 
-- `index.html` — marketplace page and sign-in / create listing dialogs
-- `styles.css` — responsive visual design
-- `app.js` — search, category filters, sample data, Supabase Auth and listing operations
-- `supabase/schema.sql` — starter tables, profile bootstrap trigger, and row-level security policies
+## Demo data
 
-## Current scope
+The app stores demo listings in browser local storage so you can add, filter, and browse them without a database.
 
-This is a starter, not a production commerce platform. It does not process payments, upload listing images, manage orders, or provide seller profiles yet. The heart/save buttons are UI-only. Add payment processing, moderation, storage, and operational policies before accepting real transactions.
+## Next steps for the real MVP
+
+- connect real auth and listings to Supabase
+- add product images and uploads
+- add cart or inquiry flows
+- add profile creation and business details
+- add bookings or checkout
+- add review and moderation flows

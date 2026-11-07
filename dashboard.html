@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seller Dashboard — The Local Market</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js" defer></script>
+</head>
+<body data-page="dashboard">
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="brand-mark">L</span><span>the local market<span class="brand-dot">.</span></span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a class="nav-link" href="index.html#discover">Discover</a>
+      <a class="nav-link active" href="dashboard.html">Dashboard</a>
+      <a class="nav-link" href="index.html#about">Our community</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="button button-dark button-small" href="index.html">Back to market</a>
+    </div>
+  </header>
+
+  <main class="page-shell dashboard-shell">
+    <section class="dashboard-header">
+      <div>
+        <p class="eyebrow">SELLER DASHBOARD</p>
+        <h1>Your little shop, <em>organized.</em></h1>
+      </div>
+      <button class="button button-dark" id="dashboard-open-form" type="button">Add a listing</button>
+    </section>
+
+    <section class="dashboard-panel">
+      <div class="dashboard-card">
+        <h2>Quick stats</h2>
+        <div class="stats-grid">
+          <div><strong>12</strong><span>Orders</span></div>
+          <div><strong>4.9</strong><span>Average review</span></div>
+          <div><strong>8</strong><span>Active listings</span></div>
+        </div>
+      </div>
+      <div class="dashboard-card wide">
+        <h2>Your listings</h2>
+        <div id="dashboard-list" class="dashboard-list"></div>
+      </div>
+    </section>
+
+    <section class="dashboard-card form-card">
+      <h2>Add a new listing</h2>
+      <form id="dashboard-form" class="dashboard-form">
+        <div class="form-columns">
+          <div>
+            <label for="dashboard-title">Listing title</label>
+            <input id="dashboard-title" required placeholder="Example: Handmade ceramic planter">
+          </div>
+          <div>
+            <label for="dashboard-category">Category</label>
+            <select id="dashboard-category" required>
+              <option value="">Choose</option>
+              <option>Home & Living</option>
+              <option>Food & Drink</option>
+              <option>Wellness</option>
+              <option>Art & Design</option>
+              <option>Services</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-columns">
+          <div>
+            <label for="dashboard-business">Business name</label>
+            <input id="dashboard-business" required placeholder="Your business name">
+          </div>
+          <div>
+            <label for="dashboard-price">Price</label>
+            <input id="dashboard-price" type="number" min="0" step="0.01" required placeholder="25.00">
+          </div>
+        </div>
+        <label for="dashboard-description">Description</label>
+        <textarea id="dashboard-description" rows="4" required placeholder="Tell customers what makes your listing special."></textarea>
+        <button class="button button-dark full-width" type="submit">Publish listing</button>
+      </form>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
